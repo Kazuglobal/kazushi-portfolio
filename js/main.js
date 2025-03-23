@@ -39,20 +39,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // タイプライターエフェクト
     const typewriterText = document.getElementById('typewriter-text');
-    const text = typewriterText.textContent;
-    typewriterText.textContent = '';
-    
-    let i = 0;
-    function typeWriter() {
-        if (i < text.length) {
-            typewriterText.textContent += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 100);
+    if (typewriterText) {
+        const text = typewriterText.textContent;
+        typewriterText.textContent = '';
+        
+        let i = 0;
+        function typeWriter() {
+            if (i < text.length) {
+                typewriterText.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
         }
+        
+        // ページ読み込み後に少し遅延させてタイプライターエフェクトを開始
+        setTimeout(typeWriter, 1000);
     }
-    
-    // ページ読み込み後に少し遅延させてタイプライターエフェクトを開始
-    setTimeout(typeWriter, 1000);
 
     // プロジェクトフィルター
     const filterBtns = document.querySelectorAll('.filter-btn');
@@ -130,9 +132,9 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (targetElement) {
                 // モバイルメニューが開いている場合は閉じる
-                if (nav.classList.contains('active')) {
+                if (nav && nav.classList.contains('active')) {
                     nav.classList.remove('active');
-                    menuToggle.classList.remove('active');
+                    if (menuToggle) menuToggle.classList.remove('active');
                 }
                 
                 // ターゲット要素までスクロール
@@ -143,4 +145,84 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // プロジェクト詳細ページのSwiperの初期化
+    const projectSwiper = document.querySelector('.project-gallery .swiper-container');
+    if (projectSwiper) {
+        new Swiper(projectSwiper, {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    }
+
+    // ブログセクションのページネーション
+    const blogPagination = document.querySelector('.blog-pagination');
+    if (blogPagination) {
+        const paginationLinks = blogPagination.querySelectorAll('a');
+        paginationLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // 実装時には実際のページネーション処理を追加
+                const page = this.getAttribute('data-page');
+                
+                // 現在のアクティブリンクを更新
+                paginationLinks.forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+                
+                // デモ用アラート
+                alert(`ページ ${page} に移動します（デモ表示のため実際には変更されません）`);
+            });
+        });
+    }
+
+    // ブログの検索機能
+    const blogSearchForm = document.getElementById('blogSearchForm');
+    if (blogSearchForm) {
+        blogSearchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const searchTerm = document.getElementById('blogSearchInput').value;
+            
+            // 実装時には実際の検索処理を追加
+            // デモ用アラート
+            alert(`「${searchTerm}」を検索します（デモ表示のため実際には検索されません）`);
+        });
+    }
+
+    // ダークモード切替
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    if (darkModeToggle) {
+        // ローカルストレージから現在の設定を取得
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        
+        // 初期状態を設定
+        if (isDarkMode) {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        
+        darkModeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            
+            const isDarkModeNow = document.body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkModeNow);
+            
+            // アイコンを切り替え
+            this.innerHTML = isDarkModeNow ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
+    }
 }); 
