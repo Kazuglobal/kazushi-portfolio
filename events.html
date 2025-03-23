@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>イベント情報 | 和志の技術ポートフォリオ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/events.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="js/script.js" defer></script>
+    <script src="js/events.js" defer></script>
+</head>
+<body>
+    <header id="site-header">
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="logo">
+                    <a href="index.html">和志のポートフォリオ</a>
+                </div>
+                <nav id="site-nav">
+                    <ul class="main-menu">
+                        <li><a href="index.html">ホーム</a></li>
+                        <li><a href="projects.html">プロジェクト</a></li>
+                        <li><a href="presentations.html">プレゼン資料</a></li>
+                        <li><a href="events.html" class="active">イベント</a></li>
+                        <li><a href="biography.html">経歴</a></li>
+                        <li class="language-switch">
+                            <a href="#" class="current">JP</a> | <a href="en/events.html">EN</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button id="mobile-menu-toggle" aria-label="メニュー">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>イベント情報</h1>
+                <p>登壇予定や主催するイベント情報をご覧いただけます</p>
+            </div>
+        </section>
+
+        <section class="events-section">
+            <div class="container">
+                <div class="section-filters">
+                    <div class="filter-group">
+                        <button class="filter-btn active" data-filter="all">すべて</button>
+                        <button class="filter-btn" data-filter="speaking">登壇</button>
+                        <button class="filter-btn" data-filter="organizing">主催</button>
+                        <button class="filter-btn" data-filter="attending">参加</button>
+                    </div>
+                    <div class="search-group">
+                        <input type="text" id="event-search" placeholder="イベントを検索...">
+                        <button id="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+
+                <div class="events-container">
+                    <!-- イベントカードはJavaScriptで動的に生成されます -->
+                </div>
+
+                <div class="no-results-message" style="display: none;">
+                    <p>検索条件に一致するイベントが見つかりませんでした。</p>
+                </div>
+                
+                <div class="pagination-container">
+                    <button id="load-more-btn">もっと見る</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="event-calendar">
+            <div class="container">
+                <h2>イベントカレンダー</h2>
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button id="prev-month"><i class="fas fa-chevron-left"></i></button>
+                        <h3 id="current-month-year">2023年10月</h3>
+                        <button id="next-month"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="calendar-grid">
+                        <div class="calendar-days">
+                            <div>日</div>
+                            <div>月</div>
+                            <div>火</div>
+                            <div>水</div>
+                            <div>木</div>
+                            <div>金</div>
+                            <div>土</div>
+                        </div>
+                        <div class="calendar-dates" id="calendar-dates">
+                            <!-- 日付はJavaScriptで動的に生成されます -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>イベント参加に関するお問い合わせ</h2>
+                <p>イベントへの招待や共同開催についてのご提案などは、こちらからお問い合わせください。</p>
+                <a href="contact.html" class="btn primary-btn">お問い合わせ</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>和志のポートフォリオ</h3>
+                    <p>フルスタックエンジニア・テックリード</p>
+                </div>
+                <div class="footer-links">
+                    <h4>サイトマップ</h4>
+                    <ul>
+                        <li><a href="index.html">ホーム</a></li>
+                        <li><a href="projects.html">プロジェクト</a></li>
+                        <li><a href="presentations.html">プレゼン資料</a></li>
+                        <li><a href="events.html">イベント</a></li>
+                        <li><a href="biography.html">経歴</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>ソーシャルメディア</h4>
+                    <div class="social-icons">
+                        <a href="https://github.com/Kazuglobal" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com/yourtwitter" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/in/yourlinkedin" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 和志のポートフォリオ. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scroll-to-top" aria-label="トップに戻る">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</body>
+</html> 
