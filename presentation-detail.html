@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プレゼンテーション資料 | KAZUSHI ODATE</title>
+    <meta name="description" content="KAZUSHI ODATE（小館和志）のプレゼンテーション資料。教育×AI、スポーツ×AI、国際交流などのテーマで行った講演やワークショップの資料を閲覧できます。">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/presentations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">KAZUSHI ODATE</a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#fields">活動分野</a></li>
+                    <li><a href="index.html#projects">プロジェクト</a></li>
+                    <li><a href="index.html#global-bunny">Global Bunny</a></li>
+                    <li><a href="index.html#blog">ブログ</a></li>
+                    <li><a href="presentations.html" class="active">資料ライブラリ</a></li>
+                    <li><a href="index.html#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- プレゼンテーション詳細 -->
+    <div id="presentation-detail">
+        <!-- ここにプレゼンテーション詳細が動的に生成されます -->
+    </div>
+
+    <!-- その他のプレゼンテーション -->
+    <section class="other-presentations section bg-light">
+        <div class="container">
+            <h2 class="section-title">その他のプレゼンテーション資料</h2>
+            <div class="other-presentations-grid" id="other-presentations-container">
+                <!-- 他のプレゼンテーション資料が動的に生成されます -->
+            </div>
+            <div class="text-center">
+                <a href="presentations.html" class="btn btn-primary">
+                    <i class="fas fa-list"></i> すべての資料を見る
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>KAZUSHI ODATE</h3>
+                    <p>未来をつくる - Creating the future</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h4>サイト内リンク</h4>
+                        <ul>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#fields">活動分野</a></li>
+                            <li><a href="index.html#projects">プロジェクト</a></li>
+                            <li><a href="index.html#global-bunny">Global Bunny</a></li>
+                            <li><a href="index.html#blog">ブログ</a></li>
+                            <li><a href="presentations.html">資料ライブラリ</a></li>
+                            <li><a href="index.html#contact">お問い合わせ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-column">
+                        <h4>プロジェクト</h4>
+                        <ul>
+                            <li><a href="project-detail.html?id=3d-workshop">3Dワークショップ</a></li>
+                            <li><a href="project-detail.html?id=international-education">国際教育プログラム</a></li>
+                            <li><a href="project-detail.html?id=disaster-ai-event">防災×AIイベント</a></li>
+                            <li><a href="project-detail.html?id=voice-workshop">VOICE WORKSHOP</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>SNS / リンク</h4>
+                    <div class="social-icons">
+                        <a href="https://x.com/AIlife2024ka" target="_blank" class="social-icon">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="https://globalbunny.jp/" target="_blank" class="social-icon">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 KAZUSHI ODATE. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- スクリプト -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/presentations.js"></script>
+    <script>
+        // AOS初期化
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // その他のプレゼンテーション資料の表示
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentPresentationId = getPresentationIdFromUrl();
+            const otherPresentationsContainer = document.getElementById('other-presentations-container');
+            
+            if (otherPresentationsContainer) {
+                // 現在表示中の資料以外の資料を取得（最大3件）
+                const otherPresentations = presentationsData
+                    .filter(presentation => presentation.id !== currentPresentationId)
+                    .slice(0, 3);
+                
+                // 他の資料のカードを生成
+                otherPresentations.forEach(presentation => {
+                    const card = document.createElement('div');
+                    card.className = 'presentation-card-small';
+                    
+                    card.innerHTML = `
+                        <a href="presentation-detail.html?id=${presentation.id}" class="presentation-link">
+                            <div class="presentation-thumbnail">
+                                <img src="${presentation.thumbnail}" alt="${presentation.title}">
+                            </div>
+                            <div class="presentation-content">
+                                <div class="presentation-category">${presentation.category}</div>
+                                <h3>${presentation.title}</h3>
+                            </div>
+                        </a>
+                    `;
+                    
+                    otherPresentationsContainer.appendChild(card);
+                });
+            }
+        });
+    </script>
+</body>
+</html> 

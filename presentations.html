@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プレゼンテーション資料ライブラリ | KAZUSHI ODATE</title>
+    <meta name="description" content="KAZUSHI ODATE（小館和志）のプレゼンテーション資料ライブラリ。教育×AI、スポーツ×AI、国際交流などのテーマで行った講演やワークショップの資料を公開しています。">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/presentations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">KAZUSHI ODATE</a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#fields">活動分野</a></li>
+                    <li><a href="index.html#projects">プロジェクト</a></li>
+                    <li><a href="index.html#global-bunny">Global Bunny</a></li>
+                    <li><a href="index.html#blog">ブログ</a></li>
+                    <li><a href="presentations.html" class="active">資料ライブラリ</a></li>
+                    <li><a href="index.html#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- ページヘッダー -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-aos="fade-up">プレゼンテーション資料ライブラリ</h1>
+            <p class="page-description" data-aos="fade-up" data-aos-delay="200">
+                教育×AI、スポーツ×AI、国際交流などのテーマで行った講演やワークショップの資料を公開しています。<br>
+                資料は自由にご覧いただけます。埋め込みコードも提供していますので、必要に応じてご活用ください。
+            </p>
+        </div>
+    </section>
+
+    <!-- 資料ライブラリ -->
+    <section class="presentations-library section">
+        <div class="container">
+            <div class="presentations-filters" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">すべて</button>
+                <button class="filter-btn" data-filter="ai-education">教育×AI</button>
+                <button class="filter-btn" data-filter="sports-ai">スポーツ×AI</button>
+                <button class="filter-btn" data-filter="international">国際教育</button>
+                <button class="filter-btn" data-filter="disaster">防災×AI</button>
+            </div>
+            
+            <div class="presentations-grid" id="presentations-container">
+                <!-- プレゼンテーションカードが動的に生成されます -->
+            </div>
+        </div>
+    </section>
+
+    <!-- プレゼンテーション資料の活用方法 -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">資料の活用方法</h2>
+            
+            <div class="usage-cards">
+                <div class="usage-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="usage-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>オンライン閲覧</h3>
+                    <p>各プレゼンテーション資料はウェブブラウザ上で直接閲覧できます。スライドをめくりながら内容を確認できます。</p>
+                </div>
+                
+                <div class="usage-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="usage-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>ダウンロード</h3>
+                    <p>資料をPDF形式でダウンロードして、オフラインでの閲覧や印刷に利用できます。</p>
+                </div>
+                
+                <div class="usage-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="usage-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>埋め込み</h3>
+                    <p>提供される埋め込みコードを使って、ご自身のウェブサイトやブログに資料を埋め込むことができます。</p>
+                </div>
+            </div>
+            
+            <div class="usage-note" data-aos="fade-up">
+                <p><strong>ご利用にあたって:</strong> 資料は教育目的や個人的な学習のためにご自由にお使いいただけます。商用利用や再配布を目的とする場合は、事前にお問い合わせください。資料を引用される場合は、出典（KAZUSHI ODATE）を明記していただけると幸いです。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>KAZUSHI ODATE</h3>
+                    <p>未来をつくる - Creating the future</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h4>サイト内リンク</h4>
+                        <ul>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#fields">活動分野</a></li>
+                            <li><a href="index.html#projects">プロジェクト</a></li>
+                            <li><a href="index.html#global-bunny">Global Bunny</a></li>
+                            <li><a href="index.html#blog">ブログ</a></li>
+                            <li><a href="presentations.html">資料ライブラリ</a></li>
+                            <li><a href="index.html#contact">お問い合わせ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-column">
+                        <h4>プロジェクト</h4>
+                        <ul>
+                            <li><a href="project-detail.html?id=3d-workshop">3Dワークショップ</a></li>
+                            <li><a href="project-detail.html?id=international-education">国際教育プログラム</a></li>
+                            <li><a href="project-detail.html?id=disaster-ai-event">防災×AIイベント</a></li>
+                            <li><a href="project-detail.html?id=voice-workshop">VOICE WORKSHOP</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>SNS / リンク</h4>
+                    <div class="social-icons">
+                        <a href="https://x.com/AIlife2024ka" target="_blank" class="social-icon">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="https://globalbunny.jp/" target="_blank" class="social-icon">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 KAZUSHI ODATE. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- スクリプト -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/presentations.js"></script>
+    <script>
+        // AOS初期化
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // フィルター機能
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const presentationCards = document.querySelectorAll('.presentation-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // アクティブクラスの切り替え
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    const filter = button.getAttribute('data-filter');
+                    
+                    // カード表示の切り替え
+                    presentationCards.forEach(card => {
+                        if (filter === 'all') {
+                            card.style.display = 'block';
+                        } else {
+                            const category = card.querySelector('.presentation-category').textContent.toLowerCase();
+                            if (
+                                (filter === 'ai-education' && category.includes('教育×ai')) ||
+                                (filter === 'sports-ai' && category.includes('スポーツ×ai')) ||
+                                (filter === 'international' && category.includes('国際教育')) ||
+                                (filter === 'disaster' && category.includes('防災×ai'))
+                            ) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
