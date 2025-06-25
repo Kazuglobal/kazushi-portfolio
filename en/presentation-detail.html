@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentation Details - KAZUSHI ODATE</title>
+    <meta name="description" content="Detailed view of presentation materials by Kazushi Odate on AI education, sports analysis, and international exchange.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/presentations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">KAZUSHI ODATE</a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html#about" data-i18n="nav.about">About</a></li>
+                    <li><a href="index.html#fields" data-i18n="nav.fields">Fields</a></li>
+                    <li><a href="index.html#projects" data-i18n="nav.projects">Projects</a></li>
+                    <li><a href="index.html#global-bunny" data-i18n="nav.global_bunny">Global Bunny</a></li>
+                    <li><a href="index.html#blog" data-i18n="nav.blog">Blog</a></li>
+                    <li><a href="presentations.html" class="active" data-i18n="nav.presentations">Resources</a></li>
+                    <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+                <div class="language-switcher">
+                    <button class="lang-switch" data-lang="ja">JP</button>
+                    <button class="lang-switch" data-lang="en">EN</button>
+                </div>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-container">
+            <ul>
+                <li><a href="index.html#about" data-i18n="nav.about">About</a></li>
+                <li><a href="index.html#fields" data-i18n="nav.fields">Fields</a></li>
+                <li><a href="index.html#projects" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="index.html#global-bunny" data-i18n="nav.global_bunny">Global Bunny</a></li>
+                <li><a href="index.html#blog" data-i18n="nav.blog">Blog</a></li>
+                <li><a href="presentations.html" class="active" data-i18n="nav.presentations">Resources</a></li>
+                <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+            <div class="mobile-language-switcher">
+                <button class="lang-switch" data-lang="ja">日本語</button>
+                <button class="lang-switch" data-lang="en">English</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Presentation Detail -->
+    <section class="section presentation-detail-section">
+        <div class="container">
+            <div class="back-link">
+                <a href="presentations.html"><i class="fas fa-arrow-left"></i> Back to Resource Library</a>
+            </div>
+            
+            <div class="presentation-header">
+                <h1 id="presentation-title">Loading presentation...</h1>
+                <div class="presentation-meta">
+                    <div class="presentation-meta-item">
+                        <i class="far fa-calendar"></i>
+                        <span id="presentation-date"></span>
+                    </div>
+                    <div class="presentation-meta-item">
+                        <i class="fas fa-tag"></i>
+                        <span id="presentation-category"></span>
+                    </div>
+                    <div class="presentation-meta-item">
+                        <i class="fas fa-file-powerpoint"></i>
+                        <span id="presentation-slides-count"></span> slides
+                    </div>
+                </div>
+            </div>
+            
+            <div class="presentation-content">
+                <div class="presentation-viewer">
+                    <div id="pdf-viewer">
+                        <div class="loading-indicator">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>Loading presentation...</p>
+                        </div>
+                        <div class="pdf-container">
+                            <iframe id="pdf-iframe" src="" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="presentation-sidebar">
+                    <div class="presentation-info-card">
+                        <h3>Presentation Details</h3>
+                        <div class="presentation-info-item">
+                            <strong>Event:</strong>
+                            <span id="presentation-event"></span>
+                        </div>
+                        <div class="presentation-info-item">
+                            <strong>Venue:</strong>
+                            <span id="presentation-venue"></span>
+                        </div>
+                        <div class="presentation-info-item">
+                            <strong>Audience:</strong>
+                            <span id="presentation-audience"></span>
+                        </div>
+                        <div class="presentation-info-item">
+                            <strong>Description:</strong>
+                            <p id="presentation-description"></p>
+                        </div>
+                    </div>
+                    
+                    <div class="presentation-actions">
+                        <a href="#" id="download-btn" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-download"></i> Download PDF
+                        </a>
+                        
+                        <div class="embed-code-container">
+                            <h4>Embed Code</h4>
+                            <div class="embed-code-input">
+                                <input type="text" id="embed-code" readonly>
+                                <button id="copy-embed-btn" class="btn btn-small">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <div id="copy-confirmation" class="copy-confirmation">Copied!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="related-presentations">
+                <h3>Related Resources</h3>
+                <div id="related-presentations-grid" class="presentations-grid small-grid">
+                    <!-- Related presentations will be dynamically loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>KAZUSHI ODATE</h3>
+                </div>
+                <div class="footer-links">
+                    <a href="#" data-i18n="footer.privacy">Privacy Policy</a>
+                    <a href="#" data-i18n="footer.terms">Terms of Use</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kazushi Odate. <span data-i18n="footer.rights">All Rights Reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/translations.js"></script>
+    <script src="../js/i18n-manager.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/presentations.js"></script>
+</body>
+</html> 

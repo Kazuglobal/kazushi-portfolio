@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Library - KAZUSHI ODATE</title>
+    <meta name="description" content="A collection of presentation materials and educational resources by Kazushi Odate on AI education, sports analysis, and international exchange.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/presentations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">KAZUSHI ODATE</a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html#about" data-i18n="nav.about">About</a></li>
+                    <li><a href="index.html#fields" data-i18n="nav.fields">Fields</a></li>
+                    <li><a href="index.html#projects" data-i18n="nav.projects">Projects</a></li>
+                    <li><a href="index.html#global-bunny" data-i18n="nav.global_bunny">Global Bunny</a></li>
+                    <li><a href="index.html#blog" data-i18n="nav.blog">Blog</a></li>
+                    <li><a href="presentations.html" class="active" data-i18n="nav.presentations">Resources</a></li>
+                    <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+                <div class="language-switcher">
+                    <button class="lang-switch" data-lang="ja">JP</button>
+                    <button class="lang-switch" data-lang="en">EN</button>
+                </div>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-container">
+            <ul>
+                <li><a href="index.html#about" data-i18n="nav.about">About</a></li>
+                <li><a href="index.html#fields" data-i18n="nav.fields">Fields</a></li>
+                <li><a href="index.html#projects" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="index.html#global-bunny" data-i18n="nav.global_bunny">Global Bunny</a></li>
+                <li><a href="index.html#blog" data-i18n="nav.blog">Blog</a></li>
+                <li><a href="presentations.html" class="active" data-i18n="nav.presentations">Resources</a></li>
+                <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+            <div class="mobile-language-switcher">
+                <button class="lang-switch" data-lang="ja">日本語</button>
+                <button class="lang-switch" data-lang="en">English</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-i18n="presentations.title">Presentation Resources</h1>
+            <p data-i18n="presentations.subtitle">Sharing presentation materials used in lectures and workshops.</p>
+        </div>
+    </section>
+    
+    <!-- Presentations Library -->
+    <section class="section">
+        <div class="container">
+            <div class="presentation-filters">
+                <div class="filter-group">
+                    <label>Category:</label>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="ai-education">AI Education</button>
+                        <button class="filter-btn" data-filter="sports-ai">Sports × AI</button>
+                        <button class="filter-btn" data-filter="international">International Education</button>
+                        <button class="filter-btn" data-filter="community">Community Education</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="presentations-grid">
+                <!-- Presentations will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- How to Use Resources -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">How to Use These Resources</h2>
+            
+            <div class="usage-cards">
+                <div class="usage-card" data-aos="fade-up">
+                    <div class="usage-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Educational Use</h3>
+                    <p>These materials may be freely used for educational purposes in classrooms, teacher training sessions, and educational research. Please credit the source when using them.</p>
+                </div>
+                
+                <div class="usage-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="usage-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Embedding</h3>
+                    <p>You can embed these presentations on your website or blog. Each presentation page provides an embed code that you can easily copy and use.</p>
+                </div>
+                
+                <div class="usage-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="usage-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>Downloading</h3>
+                    <p>All presentations can be downloaded as PDF files for offline viewing or reference. Click the download button on any presentation detail page.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>KAZUSHI ODATE</h3>
+                </div>
+                <div class="footer-links">
+                    <a href="#" data-i18n="footer.privacy">Privacy Policy</a>
+                    <a href="#" data-i18n="footer.terms">Terms of Use</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kazushi Odate. <span data-i18n="footer.rights">All Rights Reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/translations.js"></script>
+    <script src="../js/i18n-manager.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/presentations.js"></script>
+</body>
+</html> 

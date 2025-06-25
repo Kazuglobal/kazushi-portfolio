@@ -15,6 +15,13 @@
     --color-black: #000000;
     --color-gray: #6B7280;
     
+    /* RGB値 (アニメーション用) */
+    --primary-color-rgb: 30, 58, 138;
+    --secondary-color-rgb: 16, 185, 129;
+    --highlight-color-rgb: 245, 158, 11;
+    --accent-color: var(--color-secondary);
+    --accent-color-rgb: var(--secondary-color-rgb);
+    
     /* ダークモード用の色 */
     --color-bg-dark: #121212;
     --color-text-dark: #E5E7EB;
@@ -1598,4 +1605,73 @@ body.dark-mode .dark-mode-toggle {
 .presentation-date {
     font-size: 0.85rem;
     color: #666;
+}
+
+/* 言語切替ボタン */
+.language-switcher {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.language-switcher .lang-switch {
+    padding: 5px 8px;
+    font-size: 0.8rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 2px;
+    transition: all 0.3s ease;
+}
+
+.language-switcher .lang-switch:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.language-switcher .lang-switch.active {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* モバイルメニュー内の言語切替 */
+.mobile-language-switcher {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.mobile-language-switcher .lang-switch {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+}
+
+.mobile-language-switcher .lang-switch:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-language-switcher .lang-switch.active {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 991px) {
+    .language-switcher {
+        display: none;
+    }
+    
+    .mobile-language-switcher {
+        display: block;
+    }
 } 

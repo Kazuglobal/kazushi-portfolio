@@ -73,6 +73,32 @@ document.addEventListener('DOMContentLoaded', function() {
         // Japanese events data
         const jaEvents = [
             {
+                id: 9,
+                title: 'AI時代だからこそより多くの失敗が大事 - デジタル絵本ワークショップ',
+                description: '防災×AIをテーマに、子どもたちがデジタル絵本を作るワークショップ。AIエージェントを使って、子どもたちの豊かな発想を形にする体験を提供します。失敗と試行錯誤を通じた学びの大切さを伝えます。',
+                category: 'disaster-prevention',
+                date: '2025-03-25',
+                time: '13:40 - 16:00',
+                location: '東京都内予定',
+                organizer: '和志',
+                image: 'images/events/digital-storybook.jpg',
+                fee: '無料',
+                url: '#'
+            },
+            {
+                id: 10,
+                title: '君のアイデアが、動く絵本になる！見る絵本から、つくる絵本へ。',
+                description: '冬休み学びフェス『スマートシティと冬休み』の一環として開催された、子どもたちの豊かな発想を最新テクノロジーの力でデジタル絵本にするワークショップ。子どもたちが自分で考えたストーリーを実際に形にする体験を提供しました。',
+                category: 'disaster-prevention',
+                date: '2023-12-21',
+                time: '13:00 - 16:00',
+                location: '千葉県柏の葉キャンパス駅 東京大学施設',
+                organizer: '和志 / UDCK',
+                image: 'images/events/kashiwanoha-workshop.jpg',
+                fee: '無料',
+                url: 'https://www.udck.jp/reports/wZ1LUzhl'
+            },
+            {
                 id: 1,
                 title: 'フルスタック開発: フロントエンドからバックエンドまで',
                 description: 'モダンなWebアプリケーション開発の全体像を解説。ReactからNode.jsまで実践的なデモを交えて紹介します。',
@@ -180,6 +206,32 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // English events data
         const enEvents = [
+            {
+                id: 9,
+                title: 'Embracing Failure in the AI Era - Digital Storybook Workshop',
+                description: 'A workshop focused on disaster prevention & AI, where children create digital storybooks. Using AI agents, we help bring children\'s creative ideas to life while teaching the importance of learning through failure and experimentation.',
+                category: 'disaster-prevention',
+                date: '2025-03-25',
+                time: '13:40 - 16:00',
+                location: 'Tokyo (TBD)',
+                organizer: 'Kazushi',
+                image: '../images/events/digital-storybook.jpg',
+                fee: 'Free',
+                url: '#'
+            },
+            {
+                id: 10,
+                title: 'Your Ideas Become Moving Picture Books! From Reading to Creating',
+                description: 'A workshop held as part of the "Smart City and Winter Vacation" learning festival, where children\'s creative ideas were transformed into digital picture books using the latest technology. Children experienced turning their own stories into actual digital creations.',
+                category: 'disaster-prevention',
+                date: '2023-12-21',
+                time: '13:00 - 16:00',
+                location: 'University of Tokyo Facility, Kashiwa-no-ha Campus Station, Chiba',
+                organizer: 'Kazushi / UDCK',
+                image: '../images/events/kashiwanoha-workshop.jpg',
+                fee: 'Free',
+                url: 'https://www.udck.jp/reports/wZ1LUzhl'
+            },
             {
                 id: 1,
                 title: 'Full-Stack Development: From Frontend to Backend',
@@ -335,8 +387,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Display only the number of events based on visibleEventsCount
         const eventsToShow = displayedEvents.slice(0, visibleEventsCount);
         
-        eventsToShow.forEach(event => {
-            const eventElement = createEventCard(event);
+        eventsToShow.forEach((event, index) => {
+            const eventElement = createEventCard(event, index);
             eventsContainer.appendChild(eventElement);
         });
         
@@ -346,9 +398,12 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             loadMoreBtn.style.display = 'none';
         }
+
+        // Apply animation to card elements
+        initCardAnimations();
     }
 
-    function createEventCard(event) {
+    function createEventCard(event, index) {
         const dateObj = new Date(event.date);
         
         // Month format based on language
@@ -366,11 +421,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const day = dateObj.getDate();
         
         const card = document.createElement('div');
-        card.className = 'event-card';
+        card.className = 'event-card card stagger-item';
         card.setAttribute('data-id', event.id);
         
+        // Add animation delay for staggered appearance
+        card.style.animationDelay = `${0.1 + (index * 0.1)}s`;
+        
         card.innerHTML = `
-            <div class="event-card-image">
+            <div class="event-card-image img-hover-zoom">
                 <img src="${event.image}" alt="${event.title}">
                 <div class="event-date-badge">
                     <span class="month">${month}</span>
@@ -404,13 +462,46 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="event-card-footer">
                     <div class="event-fee">${event.fee}</div>
                     <div class="event-action">
-                        <a href="${event.url}" class="btn register-btn">${detailsText}</a>
+                        <a href="${event.url}" class="btn register-btn pulse-cta">${detailsText}</a>
                     </div>
                 </div>
             </div>
         `;
         
+        // Add hover effect listeners
+        card.addEventListener('mousemove', handleCardHover);
+        card.addEventListener('mouseleave', resetCardPosition);
+        
         return card;
+    }
+
+    // Card hover effects
+    function handleCardHover(e) {
+        const card = e.currentTarget;
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = (y - centerY) / 25;
+        const rotateY = (centerX - x) / 25;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    }
+
+    function resetCardPosition(e) {
+        const card = e.currentTarget;
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+    }
+
+    function initCardAnimations() {
+        const cards = document.querySelectorAll('.event-card');
+        
+        // Add fade-in animation to cards
+        cards.forEach((card, index) => {
+            card.classList.add('animated', 'fade-in');
+        });
     }
 
     function getCategoryLabel(category) {
@@ -418,12 +509,14 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 'speaking': 'Speaking',
                 'organizing': 'Organizing',
-                'attending': 'Attending'
+                'attending': 'Attending',
+                'disaster-prevention': 'Disaster Prevention & AI'
             } :
             {
                 'speaking': '登壇',
                 'organizing': '主催',
-                'attending': '参加'
+                'attending': '参加',
+                'disaster-prevention': '防災×AI'
             };
         return labels[category] || category;
     }
@@ -527,6 +620,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const dateCell = document.createElement('div');
         dateCell.className = `calendar-date ${className || ''}`;
         dateCell.textContent = day;
+        
+        // Add animation for date cells with events
+        if (className && className.includes('has-event')) {
+            dateCell.classList.add('pulse-cta');
+        }
         
         dateCell.addEventListener('click', function() {
             // Don't do anything for dates from other months

@@ -6,24 +6,26 @@
     <title>イベント情報 | 和志の技術ポートフォリオ</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/events.css">
+    <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="js/script.js" defer></script>
     <script src="js/events.js" defer></script>
+    <script src="js/animations.js" defer></script>
 </head>
 <body>
     <header id="site-header">
         <div class="container">
             <div class="header-wrapper">
                 <div class="logo">
-                    <a href="index.html">和志のポートフォリオ</a>
+                    <a href="index.html" class="header-animate">和志のポートフォリオ</a>
                 </div>
                 <nav id="site-nav">
                     <ul class="main-menu">
-                        <li><a href="index.html">ホーム</a></li>
-                        <li><a href="projects.html">プロジェクト</a></li>
-                        <li><a href="presentations.html">プレゼン資料</a></li>
-                        <li><a href="events.html" class="active">イベント</a></li>
-                        <li><a href="biography.html">経歴</a></li>
+                        <li><a href="index.html" class="header-animate">ホーム</a></li>
+                        <li><a href="projects.html" class="header-animate">プロジェクト</a></li>
+                        <li><a href="presentations.html" class="header-animate">プレゼン資料</a></li>
+                        <li><a href="events.html" class="header-animate active">イベント</a></li>
+                        <li><a href="biography.html" class="header-animate">経歴</a></li>
                         <li class="language-switch">
                             <a href="#" class="current">JP</a> | <a href="en/events.html">EN</a>
                         </li>
@@ -39,21 +41,22 @@
     </header>
 
     <main>
-        <section class="page-header">
+        <section class="page-header parallax" data-parallax-speed="0.3">
             <div class="container">
-                <h1>イベント情報</h1>
-                <p>登壇予定や主催するイベント情報をご覧いただけます</p>
+                <h1 data-animate="fade-in">イベント情報</h1>
+                <p data-animate="slide-up" data-animate-delay="0.2">登壇予定や主催するイベント情報をご覧いただけます</p>
             </div>
         </section>
 
         <section class="events-section">
             <div class="container">
-                <div class="section-filters">
+                <div class="section-filters" data-animate="slide-up">
                     <div class="filter-group">
                         <button class="filter-btn active" data-filter="all">すべて</button>
                         <button class="filter-btn" data-filter="speaking">登壇</button>
                         <button class="filter-btn" data-filter="organizing">主催</button>
                         <button class="filter-btn" data-filter="attending">参加</button>
+                        <button class="filter-btn" data-filter="disaster-prevention">防災×AI</button>
                     </div>
                     <div class="search-group">
                         <input type="text" id="event-search" placeholder="イベントを検索...">
@@ -61,24 +64,24 @@
                     </div>
                 </div>
 
-                <div class="events-container">
+                <div class="events-container card-grid">
                     <!-- イベントカードはJavaScriptで動的に生成されます -->
                 </div>
 
-                <div class="no-results-message" style="display: none;">
+                <div class="no-results-message" style="display: none;" data-animate="fade-in">
                     <p>検索条件に一致するイベントが見つかりませんでした。</p>
                 </div>
                 
-                <div class="pagination-container">
-                    <button id="load-more-btn">もっと見る</button>
+                <div class="pagination-container" data-animate="fade-in">
+                    <button id="load-more-btn" class="pulse-cta">もっと見る</button>
                 </div>
             </div>
         </section>
 
         <section class="event-calendar">
             <div class="container">
-                <h2>イベントカレンダー</h2>
-                <div class="calendar-container">
+                <h2 data-animate="fade-in">イベントカレンダー</h2>
+                <div class="calendar-container" data-animate="zoom-in" data-animate-delay="0.2">
                     <div class="calendar-header">
                         <button id="prev-month"><i class="fas fa-chevron-left"></i></button>
                         <h3 id="current-month-year">2023年10月</h3>
@@ -102,11 +105,11 @@
             </div>
         </section>
 
-        <section class="cta-section">
+        <section class="cta-section parallax" data-parallax-speed="0.2">
             <div class="container">
-                <h2>イベント参加に関するお問い合わせ</h2>
-                <p>イベントへの招待や共同開催についてのご提案などは、こちらからお問い合わせください。</p>
-                <a href="contact.html" class="btn primary-btn">お問い合わせ</a>
+                <h2 data-animate="fade-in">イベント参加に関するお問い合わせ</h2>
+                <p data-animate="slide-up" data-animate-delay="0.2">イベントへの招待や共同開催についてのご提案などは、こちらからお問い合わせください。</p>
+                <a href="contact.html" class="btn primary-btn pulse-cta" data-animate="zoom-in" data-animate-delay="0.4">お問い合わせ</a>
             </div>
         </section>
     </main>
@@ -114,11 +117,11 @@
     <footer id="site-footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
+                <div class="footer-logo" data-animate="fade-in">
                     <h3>和志のポートフォリオ</h3>
                     <p>フルスタックエンジニア・テックリード</p>
                 </div>
-                <div class="footer-links">
+                <div class="footer-links" data-animate="slide-up" data-animate-delay="0.1">
                     <h4>サイトマップ</h4>
                     <ul>
                         <li><a href="index.html">ホーム</a></li>
@@ -129,12 +132,12 @@
                         <li><a href="contact.html">お問い合わせ</a></li>
                     </ul>
                 </div>
-                <div class="footer-social">
+                <div class="footer-social" data-animate="slide-up" data-animate-delay="0.2">
                     <h4>ソーシャルメディア</h4>
                     <div class="social-icons">
-                        <a href="https://github.com/Kazuglobal" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://twitter.com/yourtwitter" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://linkedin.com/in/yourlinkedin" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Kazuglobal" target="_blank" aria-label="GitHub" class="icon-hover"><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com/yourtwitter" target="_blank" aria-label="Twitter" class="icon-hover"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/in/yourlinkedin" target="_blank" aria-label="LinkedIn" class="icon-hover"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -144,7 +147,7 @@
         </div>
     </footer>
 
-    <button id="scroll-to-top" aria-label="トップに戻る">
+    <button id="scroll-to-top" aria-label="トップに戻る" class="bounce">
         <i class="fas fa-arrow-up"></i>
     </button>
 </body>
